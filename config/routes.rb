@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'people#index'
+  root to: 'welcome#home'
 
   resources :people do
     resources :address

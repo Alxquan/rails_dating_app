@@ -4,6 +4,11 @@ class PeopleController < ApplicationController
 
   def index
     @people = Person.all.by_name
+    if params[:search]
+      @people = Person.search(params[:search]).order("created_at DESC")
+    else
+      @people = Person.all.order('created_at DESC')
+    end
   end
 
   def create

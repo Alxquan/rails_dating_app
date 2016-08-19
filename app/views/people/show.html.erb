@@ -31,3 +31,4 @@
 <%= link_to 'All Peoples', people_path %>
 <%= link_to 'Edit user', edit_person_path(@person) %>
 <%= link_to 'Delete person', person_path(@person), method: :delete %>
+<%= link_to "#{@person.name}'s favorites", person_favorites_path(@person) %>
