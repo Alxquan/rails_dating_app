@@ -9,7 +9,6 @@ class CreatePeople < ActiveRecord::Migration[5.0]
       t.string :hair_color
       t.string :ethnicity
       t.text :interest
-
       t.timestamps
     end
   end
