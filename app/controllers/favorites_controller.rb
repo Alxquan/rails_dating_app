@@ -44,7 +44,7 @@ class FavoritesController < ApplicationController
   	end
 
   	def favorite
-  		@favorite = @person.favorites.find(params[:id])
+  		@favorite = @person.favorite.find(params[:id])
   	end
 
   	def person

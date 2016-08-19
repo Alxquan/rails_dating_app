@@ -1,1 +1,9 @@
-<%= form_for [@person, @favorite]
+<%= form_for [@person, @favorite] do |f| %>
+	<%= f.label :likes %>
+	<%= f.text_field :likes %>
+	<br>
+	<%= f.label :dislikes %>
+	<%= f.text_field :dislikes %>
+	<br>
+	<%= f.submit %>
+<% end %>
