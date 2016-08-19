@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'person#index'
+  root to: 'people#index'
 
-  resources :person do
+  resources :people do
     resources :address
-    resources :favorite
+    resources :favorites
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

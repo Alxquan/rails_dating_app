@@ -1,4 +1,4 @@
-class FavoriteController < ApplicationController
+class FavoritesController < ApplicationController
 	before_action :person
 	before_action :favorite, except: [:index, :new, :update]
 

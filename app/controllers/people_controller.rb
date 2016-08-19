@@ -1,4 +1,4 @@
-class PersonController < ApplicationController
+class PeopleController < ApplicationController
 
   before_action :person, except: [:index, :new, :create]
 
@@ -41,7 +41,7 @@ class PersonController < ApplicationController
 
   private
     def person_params
-      params.require(:person).permit(:name, :gender, :height, :activity_level, :eye_color, :hair_color, :ethnicity, :interest)
+      params.require(:person).permit(:name, :gender, :height, :activity_level, :eye_color, :hair_color, :ethnicity, :interest, :age)
     end
 
     def person

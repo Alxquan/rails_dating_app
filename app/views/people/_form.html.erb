@@ -1,6 +1,6 @@
 <%= form_for @person do |f| %>
   <%= f.label :name %>
-  <%= f.string :name %>
+  <%= f.text_field :name %>
   <br/>
   <%= f.label :age %>
   <%= f.number_field :age %>
@@ -8,8 +8,8 @@
   <%= f.label :gender %>
   <%= f.text_field :gender %>
   <br/>
-  <%= f.label :alive %>
-  <%= f.check_box :alive %>
+  <%= f.label :height %>
+  <%= f.text_field :height %>
   <br/>
   <%= f.label :eye_color %>
   <%= f.text_field :eye_color %>
@@ -17,5 +17,12 @@
   <%= f.label :hair_color %>
   <%= f.text_field :hair_color %>
   <br/>
+  <%= f.label :ethnicity %>
+  <%= f.text_field :ethnicity %>
+  <br/>
+  <%= f.label :interest %>
+  <%= f.text_field :interest %>
+  <br/>
   <%= f.submit 'Save' %>
+  binding.pry
 <% end %>
