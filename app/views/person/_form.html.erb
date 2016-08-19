@@ -1,0 +1,21 @@
+<%= form_for @person do |f| %>
+  <%= f.label :name %>
+  <%= f.string :name %>
+  <br/>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <br/>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <br/>
+  <%= f.label :alive %>
+  <%= f.check_box :alive %>
+  <br/>
+  <%= f.label :eye_color %>
+  <%= f.text_field :eye_color %>
+  <br/>
+  <%= f.label :hair_color %>
+  <%= f.text_field :hair_color %>
+  <br/>
+  <%= f.submit 'Save' %>
+<% end %>
