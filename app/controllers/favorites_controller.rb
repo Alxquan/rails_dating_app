@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
 	before_action :person
-	before_action :favorite, except: [:index, :new, :update]
+	before_action :favorite, except: [:index, :new, :create]
 
   def index
   	@favorites = @person.favorites
@@ -14,7 +14,7 @@ class FavoritesController < ApplicationController
   end
 
   def create
-  	@favorite = @person.favorite.new(favorite_params)
+  	@favorite = @person.favorites.new(favorite_params)
   	if @favorite.save
   		redirect_to person_favorite_path(@person, @favorite)
   	else
@@ -44,7 +44,7 @@ class FavoritesController < ApplicationController
   	end
 
   	def favorite
-  		@favorite = @person.favorite.find(params[:id])
+  		@favorite = @person.favorites.find(params[:id])
   	end
 
   	def person

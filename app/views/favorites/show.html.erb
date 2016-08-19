@@ -1,2 +1,16 @@
-<h1>Favorite#show</h1>
-<p>Find me in app/views/favorite/show.html.erb</p>
+<h1>Favorite</h1>
+<hr>
+<h2>Likes</h2>
+<h4><%= @favorite.likes %></h4>
+<h2>Dislikes</h2>
+<h4><%= @favorite.dislikes %></h4>
+<hr>
+
+<%= link_to 'Edit Favorite', edit_person_favorite_path(@favorite) %> ||
+<%= link_to 'Delete', person_favorite_path(@favorite), method: :delete, data: {confirm: 'Are you sure?'} %> ||
+<%= link_to @person.name, person_path(@person) %> ||
+<%= link_to 'People', people_path %>
+<br>
+<hr>
+<%= link_to "View #{@person.name}'s other favorites", person_favorites_path(@person) %>
+
