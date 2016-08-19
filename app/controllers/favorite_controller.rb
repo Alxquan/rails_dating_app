@@ -1,6 +1,7 @@
 class FavoriteController < ApplicationController
 	before_action :person
 	before_action :favorite, except: [:index, :new, :update]
+
   def index
   	@favorites = @person.favorites
   end
