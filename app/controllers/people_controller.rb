@@ -24,10 +24,11 @@ class PeopleController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
-    @person = Person.edit
+    @person = person
   end
 
   def new
@@ -36,7 +37,7 @@ class PeopleController < ApplicationController
 
   def destroy
     @person.destroy
-    redirect_to person_path
+    redirect_to people_path
   end
 
   private

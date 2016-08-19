@@ -1,3 +1,33 @@
-<h1>Editing: <%= @person.name %></h1>
+<h1>You've created: <%=@person.name %></h1>
+<h1>Info for person: <%=@person.name %></h1>
+<table>
+  <thead>
+    <tr>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Height</th>
+      <th>Hair Color</th>
+      <th>Eye Color</th>
+      <th>Activity Level</th>
+      <th>Ethnicity</th>
+      <th>Interests</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= @person.age %> </td>
+      <td> <%= @person.gender %> </td>
+      <td> <%= @person.height %> </td>
+      <td> <%= @person.hair_color %> </td>
+      <td> <%= @person.eye_color %> </td>
+      <td> <%= @person.activity_level %></td>
+      <td> <%= @person.ethnicity %> </td>
+      <td><%= @person.interest %></td>
+      </tr>
+  </tbody>
 
-<%= render(partial: 'form') %>
+</table>
+
+<%= link_to 'All Peoples', people_path %>
+<%= link_to 'Edit user', edit_person_path(@person) %>
+<%= link_to 'Delete person', person_path(@person), method: :delete %>
