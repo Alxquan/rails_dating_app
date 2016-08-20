@@ -3,11 +3,17 @@ class PeopleController < ApplicationController
   before_action :person, except: [:index, :new, :create]
 
   def index
-    @people = Person.all.by_name
+    @people = Person.search(params[:search])
     if params[:search]
-      @people = Person.search(params[:search]).order("created_at DESC")
+      if @people == []
+        @nobody = "Nobody matches this criteria. Please try again or browse all people below."
+        @people = Person.all
+      else
+        @nobody = " "
+        @people = Person.search(params[:search]).order("created_at DESC")
+      end
     else
-      @people = Person.all.order('created_at DESC')
+      @people = Person.all
     end
   end
 

@@ -1,21 +1,21 @@
 <h1>People to date</h1>
+<hr>
 
 <%= form_tag(people_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-<%= submit_tag "Search" %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
+	<%= submit_tag "Search" %>
 
 <% end %>
-<% if @results == true %>
-  <%= @person %>
-<% else %>
- <p>There are no people containing the terms <%= params[:search]  %></p>
- <% end %>
+<hr>
+<h3><%= @nobody %> </h3>
+  <ul>
+  	<% @people.each do |person| %>
+  		<li><%= link_to person.name, person_path(person) %></li>
+  	<% end %>
+	</ul>
 
-<ul>
-  <% @people.each do |person| %>
-  <li><%= link_to person.name, person_path(person) %></li>
-  <% end %>
-</ul>
+
+
 
 
 <%= link_to 'Create Person', new_person_path%>
