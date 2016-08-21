@@ -1,5 +1,5 @@
-<h1>You've created: <%=@person.name %></h1>
-<h1>Info for person: <%=@person.name %></h1>
+<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> <%= @person.name %>'s info: <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1> 
+<hr>
 <table>
   <thead>
     <tr>
@@ -27,8 +27,8 @@
   </tbody>
 
 </table>
-
-<%= link_to 'All Peoples', people_path %>
-<%= link_to 'Edit user', edit_person_path(@person) %>
-<%= link_to 'Delete person', person_path(@person), method: :delete %>
+<hr>
+<%= link_to 'All Peoples', people_path %> ||
+<%= link_to 'Edit user', edit_person_path(@person) %> ||
+<%= link_to 'Delete person', person_path(@person), method: :delete %> ||
 <%= link_to "#{@person.name}'s favorites", person_favorites_path(@person) %>

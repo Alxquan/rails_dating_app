@@ -5,31 +5,32 @@
   <% end %>
 </ul>
 <%end%>
-
-<%= form_for @person do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, required: true %>
-  <br/>
-  <%= f.label :age %>
-  <%= f.number_field :age, required: true %>
-  <br/>
-  <%= f.label :gender %>
-  <%= f.select :gender, ["Male", "Female"], required: true%>
-  <br/>
-  <%= f.label :height %>
-  <%= f.text_field :height %>
-  <br/>
-  <%= f.label :eye_color %>
-  <%= f.text_field :eye_color %>
-  <br/>
-  <%= f.label :hair_color %>
-  <%= f.text_field :hair_color %>
-  <br/>
-  <%= f.label :ethnicity %>
-  <%= f.text_field :ethnicity %>
-  <br/>
-  <%= f.label :interest %>
-  <%= f.text_field :interest %>
-  <br/>
-  <%= f.submit 'Save' %>
-<% end %>
+<div class="forms">
+  <%= form_for @person do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true %>
+    <br/>
+    <%= f.label :age %>
+    <%= f.number_field :age, required: true %>
+    <br/>
+    <%= f.label :gender %>
+    <%= f.select :gender, ["Male", "Female"], required: true%>
+    <br/>
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+    <br/>
+    <%= f.label :eye_color %>
+    <%= f.text_field :eye_color %>
+    <br/>
+    <%= f.label :hair_color %>
+    <%= f.text_field :hair_color %>
+    <br/>
+    <%= f.label :ethnicity %>
+    <%= f.text_field :ethnicity %>
+    <br/>
+    <%= f.label :interest %>
+    <%= f.text_field :interest %>
+    <br/>
+    <%= f.submit 'Save' %>
+  <% end %>
+</div>
