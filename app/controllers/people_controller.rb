@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
 
-  before_action :person, except: [:index, :new, :create]
+  before_action :person, except: [:index, :new, :create, :search]
 
   def index
     @people = Person.search(params[:search])
@@ -10,7 +10,7 @@ class PeopleController < ApplicationController
         @people = Person.all
       else
         @nobody = " "
-        @people = Person.search(params[:search]).order("created_at DESC")
+        @people = Person.search(params[:search])
       end
     else
       @people = Person.all

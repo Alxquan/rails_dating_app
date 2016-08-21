@@ -7,8 +7,9 @@ class Person < ApplicationRecord
   end
 
   def self.search(search)
-    @results = Person.where(name:search)
 
+  	Person.where(name:search)
+    
   end
 
 end

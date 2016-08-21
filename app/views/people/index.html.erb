@@ -2,10 +2,10 @@
 <hr>
 
 <%= form_tag(people_path, :method => "get", id: "search-form") do %>
-	<%= text_field_tag :search, params[:search], placeholder: "Search by name" %>
+	<%= text_field_tag :search, params[:search], placeholder: "Search" %>
 	<%= submit_tag "Search" %>
-
 <% end %>
+
 <hr>
 <h3><%= @nobody %> </h3>
   <ul>
