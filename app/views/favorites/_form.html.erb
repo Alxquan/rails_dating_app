@@ -1,11 +1,13 @@
-<div class="forms">
-	<%= form_for [@person, @favorite] do |f| %>
-		<%= f.label :likes %>
-		<%= f.text_field :likes %>
-		<br>
-		<%= f.label :dislikes %>
-		<%= f.text_field :dislikes %>
-		<br>
-		<%= f.submit %>
-	<% end %>
+<div class="row">
+	<div class="col s6 offset-s3">
+		<%= form_for [@person, @favorite] do |f| %>
+			<%= f.label :likes %>
+			<%= f.text_field :likes %>
+			<br>
+			<%= f.label :dislikes %>
+			<%= f.text_field :dislikes %>
+			<br>
+			<%= f.submit %>
+		<% end %>
+	</div>
 </div>
