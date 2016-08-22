@@ -1,18 +1,4 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Dating app!</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li>
-        <%= link_to 'All Peoples', people_path %>
-      </li>
-      <li>
-        <%= link_to 'Edit user', edit_person_path(@person) %>
-      </li>
-      <li><%= link_to 'Delete person', person_path(@person), method: :delete %></li>
-      <li><%= link_to "#{@person.name}'s favorites", person_favorites_path(@person) %></li>
-    </ul>
-  </div>
-</nav>
+<%=render(partial: 'navbar') %>
 
 <h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> <%= @person.name %>'s info: <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
 <hr>
