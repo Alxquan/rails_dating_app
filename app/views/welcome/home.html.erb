@@ -2,8 +2,8 @@
 <h2>Are you male or female?</h2>
 
 <ul>
-  <li><%=link_to 'Male', people_path(params[:female])%></li>
-  <li><%=link_to 'Female', people_path(params[:male])%></li>
+  <li><%=link_to 'Male', people_path%></li>
+  <li><%=link_to 'Female', people_path(params[gender: 'Male'])%></li>
 </ul>
 
 

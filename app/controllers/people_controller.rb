@@ -1,21 +1,35 @@
 class PeopleController < ApplicationController
 
-  before_action :person, except: [:index, :new, :create, :search]
+  before_action :person, except: [:index, :new, :create, :search, :female]
 
-  def index(sex)
-    sex = sex
+  def index
     @people = Person.search(params[:search])
     if params[:search]
       if @people == []
         @nobody = "Nobody matches this criteria. Please try again or browse all people below."
-        @people = Person.all.where(gender: sex)
+        @people = Person.all.where(gender: 'Male')
       else
         @nobody = " "
         @people = Person.search(params[:search])
       end
     else
-      @people = Person.all.where(gender: sex)
+      @people = Person.all.where(gender: 'Male')
     end
+
+  def female
+    @people = Person.search(params[:search])
+    if params[:search]
+      if @people == []
+        @nobody = "Nobody matches this criteria. Please try again or browse all people below."
+        @people = Person.all.where(gender: 'Female')
+      else
+        @nobody = " "
+        @people = Person.search(params[:search])
+      end
+    else
+      @people = Person.all.where(gender: 'Female')
+    end
+  end
 
     # @person_gender = Person.gender.all
   end

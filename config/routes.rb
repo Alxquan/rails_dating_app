@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'welcome#home'
 
-  get 'people/search', to: 'people#search'
+  get 'people/female', to: 'people#female'
 
   resources :people do
     resources :address

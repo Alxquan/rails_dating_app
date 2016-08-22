@@ -1,0 +1,22 @@
+<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> People to date <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
+
+<div class="search">
+	<%= form_tag(people_path, :method => "get", id: "search-form") do %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+		<%= submit_tag "Search" %>
+	<% end %>
+</div>
+
+
+<h3><%= @nobody %> </h3>
+  <ul class="list">
+  	<% @people.each do |person| %>
+  		<li><%= link_to person.name, person_path(person) %></li>
+  	<% end %>
+	</ul>
+
+
+
+<hr>
+
+<%= link_to 'Create Person', new_person_path%>
