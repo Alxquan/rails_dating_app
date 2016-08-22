@@ -15,6 +15,8 @@ class PeopleController < ApplicationController
     else
       @people = Person.all
     end
+
+    # @person_gender = Person.gender.all
   end
 
   def create

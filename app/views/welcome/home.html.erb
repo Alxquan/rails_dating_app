@@ -1,3 +1,17 @@
-<h1>Welcome#home</h1>
-<%= link_to "Something", people_path %>
+<h1>Welcome to our dating site!</h1>
+<h2>Are you male or female?</h2>
+
+<ul>
+  <li><%=link_to 'Male', people_path('Male')%></li>
+  <li><%=link_to 'Female', people_path('Female')%></li>
+</ul>
+
+
+<% @person.each do |sex| %>
+  <ul>
+    <li><%= sex.name %> <%=sex.gender %></li>
+  </ul>
+<% end %>
+
+<%= link_to 'Search all', people_path %>
 
