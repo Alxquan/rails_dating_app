@@ -1,0 +1,24 @@
+<h1> Address Information <h1>
+
+<%= form_for [@person, @address] do |f| %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+<br>
+  <%= f.label :city %>
+  <%= f.text_field :city, required: true %>
+</br>
+<br>
+  <%= f.label :state  %>
+  <%= f.text_field :state, required: true %>
+</br>
+<br>
+  <%= f.label :street  %>
+  <%= f.text_field :street %>
+</br>
+<br>
+  <%= f.label :zipcode  %>
+  <%= f.text_field :zipcode %>
+</br>
+
+  <%= f.submit %>
+<% end %>
