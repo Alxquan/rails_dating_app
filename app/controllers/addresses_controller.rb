@@ -1,4 +1,4 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
   before_action :find_person
   before_action :find_address, except: [:index, :new, :create]
 
@@ -8,11 +8,11 @@ class AddressController < ApplicationController
   end
 
   def show
-    @address = Address.find(params[:id])
   end
 
   def create
-    @address = @person.address.new(address_params)
+    @address = Address.new(address_params)
+    @address[:person_id] = @person.id
     if @address.save
       redirect_to person_address_path(@person, @address)
     else
@@ -37,7 +37,7 @@ class AddressController < ApplicationController
 
   def destroy
     @address.destroy
-    redirect_to person_address_path
+    redirect_to person_path(@person)
   end
 
 
@@ -53,7 +53,7 @@ class AddressController < ApplicationController
     end
 
     def find_address
-      @address = @person.address.find(params[:id])
+      @address = Address.find(params[:id])
     end
 
 end
