@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'welcome#home'
+  root to: 'people#index'
 
   get 'people/female', to: 'people#female'
 
