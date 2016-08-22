@@ -1,0 +1,19 @@
+
+<div class="forms">
+  <%= form_for [@person, @address] do |f| %>
+    <%= f.label :city %>
+    <%= f.text_field :city, required: true %>
+    <br>
+    <%= f.label :state  %>
+    <%= f.text_field :state, required: true %>
+    <br>
+    <%= f.label :zip  %>
+    <%= f.text_field :zip %>
+    <br>
+    <%= f.label :email_address %>
+    <%= f.text_field :email_address %>
+    <br>  
+
+    <%= f.submit %>
+  <% end %>
+</div>

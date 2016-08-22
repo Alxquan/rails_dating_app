@@ -1,10 +1,10 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
   before_action :find_person
   before_action :find_address, except: [:index, :new, :create]
 
 
   def index
-    @addresses = Address.all
+    @addresses = @person.addresses
   end
 
   def show
@@ -12,7 +12,7 @@ class AddressController < ApplicationController
   end
 
   def create
-    @address = @address.Address.new(car_params)  #associating the new car with the person
+    @address = @person.address.new(address_params)
     if @address.save
       redirect_to person_address_path(@person, @address)
     else
@@ -25,12 +25,11 @@ class AddressController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-    if @car.update(car_params)
-      redirect_to person_car_path(@person, @car)
+    if @address.update(address_params)
+      redirect_to person_address_path(@person, @address)
     else
       render :edit
     end
@@ -46,7 +45,7 @@ class AddressController < ApplicationController
 
   private
     def address_params
-      params.require(??).permit(:????) # any other information will be thrown out
+      params.require(:address).permit(:city, :state, :zip, :email_address)
     end
 
     def find_person
@@ -54,8 +53,7 @@ class AddressController < ApplicationController
     end
 
     def find_address
-      @address = @person.address.find(params[:id])
+      @address = @person.addresses.find(params[:id])
     end
-  end
 
 end
