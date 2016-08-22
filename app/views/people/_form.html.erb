@@ -14,7 +14,8 @@
     <%= f.number_field :age, required: true %>
     <br/>
     <%= f.label :gender %>
-    <%= f.select :gender, ["Male", "Female"], required: true%>
+    <%= f.text_field :gender %>
+    <!-- <%= f.select :gender, ["Male", "Female"], required: true%> -->
     <br/>
     <%= f.label :height %>
     <%= f.text_field :height %>
