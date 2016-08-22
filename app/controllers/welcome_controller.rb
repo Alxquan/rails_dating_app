@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
-def home
-  @person = Person.all
+  def home
+    @person = Person.all
 
-end
+  end
 end

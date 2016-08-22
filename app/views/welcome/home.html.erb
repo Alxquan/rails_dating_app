@@ -7,11 +7,12 @@
 </ul>
 
 
-<% @person.each do |sex| %>
+
+
   <ul>
-    <li><%= sex.name %> <%=sex.gender %></li>
+    <li><%= @person.order(:gender).each%></li>
   </ul>
-<% end %>
+<% binding.pry %>
 
 <%= link_to 'Search all', people_path %>
 
