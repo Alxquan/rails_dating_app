@@ -1,10 +1,10 @@
-class AddressesController < ApplicationController
+class AddressController < ApplicationController
   before_action :find_person
   before_action :find_address, except: [:index, :new, :create]
 
 
   def index
-    @addresses = @person.addresses
+    @addresses = @person.address
   end
 
   def show
@@ -53,7 +53,7 @@ class AddressesController < ApplicationController
     end
 
     def find_address
-      @address = @person.addresses.find(params[:id])
+      @address = @person.address.find(params[:id])
     end
 
 end
