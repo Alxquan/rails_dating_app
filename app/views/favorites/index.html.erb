@@ -1,6 +1,9 @@
-<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> <%= @person.name%>'s Favorites<%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
+<div class="row">
+	<div class="header col s6 offset-s3">
+	  <h1 ><%= image_tag("hearts2.jpg", size: "50x50")%> <%= @person.name %>'s Favorites <%= image_tag("hearts2.jpg", size: "50x50")%> </h1>
+	</div>
+</div>
 
-<hr>
 <% if @favorites.any? %>
 	<h3>Likes</h3>
 	<ul>

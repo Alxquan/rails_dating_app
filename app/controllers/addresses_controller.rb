@@ -5,6 +5,11 @@ class AddressesController < ApplicationController
 
   def index
     @addresses = @person.address
+    if @addresses 
+      render :index
+    else
+      redirect_to new_person_address_path(@person)
+    end
   end
 
   def show

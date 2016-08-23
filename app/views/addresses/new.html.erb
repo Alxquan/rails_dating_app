@@ -1,3 +1,7 @@
-<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> Adding a new address for <%= @person.name %> <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
+<div class="row">
+	<div class="col s8 offset-s2">
+		<h1 class="header" ><%= image_tag("hearts2.jpg", size: "50x50")%> Adding a new address for <%= @person.name %> <%= image_tag("hearts2.jpg", size: "50x50")%> </h1>
+	</div>
+</div>
 
 <%= render(partial: 'form') %>

@@ -1,3 +1,28 @@
 @import 'materialize';
 
+body {
+	background-color: #ff8a80;
+}
 
+.search_form {
+	border: 1px solid black;
+	border-radius: 15px;
+	background-color: #ffebee;
+}
+
+.label_field {
+	padding: 0 20px;
+}
+
+.search_button {
+	padding: -10px 20px 10px 20px;
+	margin: 0 0 10px 10px;
+}
+
+.header {
+	text-align: center;
+	background-color: #ffebee;
+	margin: 10px 10px 0 10px;
+	border: 1px solid black;
+	border-radius: 15px;
+}

@@ -1,5 +1,9 @@
-<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> Favorite <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
-<hr>
+<div class="row">
+	<div class="header col s6 offset-s3">
+	  <h1 ><%= image_tag("hearts2.jpg", size: "50x50")%> Favorite <%= image_tag("hearts2.jpg", size: "50x50")%> </h1>
+	</div>
+</div>
+
 <h2>Likes</h2>
 <h4><%= @favorite.likes %></h4>
 <h2>Dislikes</h2>

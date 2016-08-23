@@ -1,4 +1,7 @@
-<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> Editing favorite things for <%= @person.name %> <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
-<hr>
+<div class="row">
+	<div class="header col s6 offset-s3">
+	  <h1 ><%= image_tag("hearts2.jpg", size: "50x50")%> Editing favorite things for <%= @person.name %> <%= image_tag("hearts2.jpg", size: "50x50")%> </h1>
+	</div>
+</div>
 
 <%= render(partial: 'form') %>
