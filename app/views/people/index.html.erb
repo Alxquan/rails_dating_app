@@ -1,12 +1,15 @@
 <h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> People to date <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
 
-<div class="search">
-	<%= form_tag(people_path, :method => "get", id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
-		<%= submit_tag "Search" %>
-	<% end %>
+<div class="row">
+  <div class="col s6">
+    <div class="input-field">
+    	<%= form_tag(people_path, :method => "get", id: "search-form") do %>
+    		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    		<%= submit_tag "Search" %>
+    	<% end %>
+    </div>
+  </div>
 </div>
-
 
 <h3><%= @nobody %> </h3>
   <!-- <ul class="list"> -->

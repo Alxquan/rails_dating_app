@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   root to: 'people#index'
 
-  get 'people/female', to: 'people#female'
-
   resources :people do
     resources :addresses
     resources :favorites
