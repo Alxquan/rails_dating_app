@@ -1,12 +1,18 @@
-<h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> People to date <%= image_tag("hearts2.jpg", size: "50x50", class: "header")%> </h1>
-
-<div class="search">
-	<%= form_tag(people_path, :method => "get", id: "search-form") do %>
-		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
-		<%= submit_tag "Search" %>
-	<% end %>
+<div class="row">
+  <div class="col s6 offset-s3">
+    <h1 class="text" ><%= image_tag("hearts2.jpg", size: "50x50")%> People to date <%= image_tag("hearts2.jpg", size: "50x50")%> </h1>
+  </div>
 </div>
-
+<div class="row">
+  <div class="col s12">
+    <div class="search">
+    	<%= form_tag(people_path, :method => "get", id: "search-form") do %>
+    		<%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    		<%= submit_tag "Search" %>
+    	<% end %>
+    </div>
+  </div>
+</div>
 
 <h3><%= @nobody %> </h3>
   <!-- <ul class="list"> -->
@@ -15,7 +21,8 @@
       <div class="col s12 m3">
         <div class="card blue-grey darken-1">
           <div class="card-content white-text">
-            <i class="prefix"> <img class="responsive-img" ><%= image_tag("BenHur.jpg")%> class="circle responsive-img"> </i> <span class="card-title"><%= person.name %></span> 
+            <%= image_tag("BenHur.jpg",size: "60x60", class: "prefix responsive-img circle")%> 
+            <span class="card-title"><%= person.name %></span> 
 
 
 
@@ -30,6 +37,7 @@
           </div>
           <div class="card-action">
 						<%= link_to 'Personal Info', person_addresses_path(person) %>
+            <%= link_to 'Favorites', person_favorites_path(person) %>
 
           </div>
         </div>
